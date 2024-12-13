@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SendETH DApp</title>
+    <style>
+        /* General Reset */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #4caf50;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #333;
+            margin: 20px 0 10px;
+        }
+
+        /* Button Styles */
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        /* Input Fields */
+        input {
+            width: calc(100% - 40px);
+            max-width: 400px;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        /* Sections */
+        .section {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Paragraphs */
+        p {
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        #walletAddress, #balance, #status, #voteStatus {
+            font-weight: bold;
+            color: #555;
+        }
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            button {
+                font-size: 0.9rem;
+                padding: 8px 12px;
+            }
+
+            input {
+                font-size: 0.9rem;
+            }
+
+            .section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>SendETH DApp</h1>
+
+    <!-- Connect Wallet Section -->
+    <button id="connectWallet">Connect Wallet</button>
+    <p id="walletAddress">Wallet Address: Not connected</p>
+    <p id="balance">Balance: Not available</p>
+
+    <!-- Send ETH Section -->
+    <h3>Send ETH</h3>
+    <input type="text" id="recipient" placeholder="Recipient Address">
+    <input type="text" id="amount" placeholder="Amount in ETH">
+    <button id="sendETH">Send</button>
+    <p id="status">Status: Waiting for action...</p>
+
+    <!-- Voting Section -->
+    <h3>Vote for a Proposal</h3>
+    <button id="vote1">Vote for Proposal 1</button>
+    <button id="vote2">Vote for Proposal 2</button>
+    <p id="voteStatus">Vote Status: Waiting for action...</p>
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers/dist/ethers.umd.min.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
